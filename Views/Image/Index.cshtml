@@ -1,0 +1,57 @@
+﻿@model IEnumerable<HelpCenter.Models.sp_GetImages_Result>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutEditor.cshtml";
+}
+
+<h2>Uploaded Images</h2>
+<br />
+<div style="overflow-y: scroll; max-height: 600px;">
+
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                Image
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.User)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Created_at)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td width="40%">
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    <a href="~/Content/img/@Html.DisplayFor(modelItem => item.Name)" target="_blank">
+                        <img width="100" height="100"  src="~/Content/img/@Html.DisplayFor(modelItem => item.Name)"/>
+                    </a>
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.User)
+                </td>
+                <td width="30%">
+                    @Html.DisplayFor(modelItem => item.Created_at)
+                </td>
+                <td width="100%">
+                    <a href="@Url.Action("Edit",new { id=item.Images_id })" class="btn btn-primary"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+                    <a href="@Url.Action("Delete",new { id=item.Images_id })" class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i></a>
+                </td>
+            </tr>
+        }
+
+    </table>
+
+</div>
+<br />
+@Html.ActionLink("Add New", "Create", null, new { @class = "btn btn-primary" })

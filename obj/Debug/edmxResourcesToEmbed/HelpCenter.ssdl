@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="HelpCenter2Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <Function Name="sp_GetVideos" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="UserId" Type="int" Mode="In" />
+    <Parameter Name="Video_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_NewVideo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Name" Type="nvarchar" Mode="In" />
+    <Parameter Name="C_User" Type="int" Mode="In" />
+    <Parameter Name="C_at" Type="datetime" Mode="In" />
+    <Parameter Name="U_User" Type="int" Mode="In" />
+    <Parameter Name="U_at" Type="datetime" Mode="In" />
+  </Function>
+  <EntityContainer Name="HelpCenter2ModelStoreContainer" />
+</Schema>

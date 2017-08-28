@@ -1,0 +1,33 @@
+﻿@model HelpCenter.Models.sp_GetImages_Result
+
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_LayoutEditor.cshtml";
+}
+
+@if (ViewBag.Error != null)
+{
+    <div class="alert alert-danger alert-dismissable">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+        @ViewBag.Error
+    </div>
+}
+
+<h2>Upload your Images</h2>
+
+@using (Html.BeginForm("Create", "Image", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    <div class="form-group">
+        <label for="file">Upload Images:</label>
+        <input type="file" name="files" id="files" multiple />
+    </div>
+    <input type="submit" value="Upload" class="btn btn-primary" />
+}
+<br />
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

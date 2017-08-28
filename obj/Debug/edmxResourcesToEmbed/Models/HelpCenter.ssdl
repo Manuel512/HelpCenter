@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="HelpCenter2Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <Function Name="sp_CountSectionsByModule" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Module_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_DeleteImage" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Image_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_DeleteVideo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Video_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_GetImages" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Image_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_GetModules" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Module_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_GetSections" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Section_id" Type="int" Mode="In" />
+    <Parameter Name="Active_only" Type="bit" Mode="In" />
+    <Parameter Name="Ordered" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="sp_GetVideos" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Video_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_NewImage" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Name" Type="nvarchar" Mode="In" />
+    <Parameter Name="User" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_NewSection" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Module_id" Type="int" Mode="In" />
+    <Parameter Name="Section" Type="nvarchar" Mode="In" />
+    <Parameter Name="User" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_NewVideo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Name" Type="nvarchar" Mode="In" />
+    <Parameter Name="User" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_UpdateImage" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Image_id" Type="int" Mode="In" />
+    <Parameter Name="Name" Type="nvarchar" Mode="In" />
+    <Parameter Name="User" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_UpdateSection" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Section_id" Type="int" Mode="In" />
+    <Parameter Name="User" Type="int" Mode="In" />
+    <Parameter Name="Name" Type="nvarchar" Mode="In" />
+    <Parameter Name="Module_id" Type="int" Mode="In" />
+    <Parameter Name="Enabled" Type="bit" Mode="In" />
+  </Function>
+  <Function Name="sp_UpdateSectionOrder" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Section_id" Type="int" Mode="In" />
+    <Parameter Name="Module_id" Type="int" Mode="In" />
+    <Parameter Name="User" Type="int" Mode="In" />
+    <Parameter Name="Old_Order" Type="int" Mode="In" />
+    <Parameter Name="New_Order" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_UpdateVideo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="Video_id" Type="int" Mode="In" />
+    <Parameter Name="Name" Type="nvarchar" Mode="In" />
+    <Parameter Name="User" Type="int" Mode="In" />
+  </Function>
+  <EntityContainer Name="HelpCenter2ModelStoreContainer" />
+</Schema>

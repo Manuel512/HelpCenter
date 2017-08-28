@@ -1,0 +1,55 @@
+﻿@model HelpCenter.Models.sp_GetImages_Result
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_LayoutEditor.cshtml";
+}
+
+@if (ViewBag.Error != null)
+{
+    <div class="alert alert-danger alert-dismissable">
+        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+        @ViewBag.Error
+    </div>
+}
+
+@using (Html.BeginForm("Edit", "Image", Model.Images_id, FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+
+    <h3>Actual Image</h3>
+    <hr />
+    @Html.HiddenFor(Model => Model.Images_id)
+    <div class="row" style="text-align: center">
+
+        <div class="col-md-12">
+            <div class="form-group">
+                <h4>@Html.DisplayFor(model => model.Name)</h4>
+            </div>
+            <div class="form-group">
+                <a href="~/Content/img/@Html.DisplayFor(model => model.Name)" target="_blank">
+                    <img width="100" height="100" src="~/Content/img/@Html.DisplayFor(model => model.Name)" />
+                </a>
+            </div>
+        </div>
+
+    </div>
+    <hr />
+    <h3>New Video</h3>
+    <hr />
+    <div class="form-group">
+        <label for="file">Upload New Image:</label>
+        <input type="file" name="file" id="file" />
+    </div>
+
+    <div class="form-group">
+        <input type="submit" value="Upload" class="btn btn-default" />
+    </div>
+}
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

@@ -1,0 +1,264 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="HelpCenter2Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <Function Name="sp_CountSectionsByModule" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Module_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_DeleteImage" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Image_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_DeleteVideo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Video_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_GetImages" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Image_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_GetModules" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Module_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_GetSections" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Section_id" Type="int" Mode="In" />
+          <Parameter Name="Active_only" Type="bit" Mode="In" />
+          <Parameter Name="Ordered" Type="bit" Mode="In" />
+        </Function>
+        <Function Name="sp_GetVideos" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Video_id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_NewImage" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Name" Type="nvarchar" Mode="In" />
+          <Parameter Name="User" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_NewSection" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Module_id" Type="int" Mode="In" />
+          <Parameter Name="Section" Type="nvarchar" Mode="In" />
+          <Parameter Name="User" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_NewVideo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Name" Type="nvarchar" Mode="In" />
+          <Parameter Name="User" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_UpdateImage" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Image_id" Type="int" Mode="In" />
+          <Parameter Name="Name" Type="nvarchar" Mode="In" />
+          <Parameter Name="User" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_UpdateSection" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Section_id" Type="int" Mode="In" />
+          <Parameter Name="User" Type="int" Mode="In" />
+          <Parameter Name="Name" Type="nvarchar" Mode="In" />
+          <Parameter Name="Module_id" Type="int" Mode="In" />
+          <Parameter Name="Enabled" Type="bit" Mode="In" />
+        </Function>
+        <Function Name="sp_UpdateSectionOrder" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Section_id" Type="int" Mode="In" />
+          <Parameter Name="Module_id" Type="int" Mode="In" />
+          <Parameter Name="User" Type="int" Mode="In" />
+          <Parameter Name="Old_Order" Type="int" Mode="In" />
+          <Parameter Name="New_Order" Type="int" Mode="In" />
+        </Function>
+        <Function Name="sp_UpdateVideo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="Video_id" Type="int" Mode="In" />
+          <Parameter Name="Name" Type="nvarchar" Mode="In" />
+          <Parameter Name="User" Type="int" Mode="In" />
+        </Function>
+        <EntityContainer Name="HelpCenter2ModelStoreContainer" />
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="HelpCenter2Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="HelpCenter2Entities" annotation:LazyLoadingEnabled="true" >
+          <FunctionImport Name="DeleteVideo">
+          <Parameter Name="Video_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="GetVideos" ReturnType="Collection(HelpCenter2Model.sp_GetVideos_Result)">
+          <Parameter Name="Video_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="NewVideo">
+            <Parameter Name="Name" Mode="In" Type="String" />
+            <Parameter Name="User" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="UpdateVideo">
+            <Parameter Name="Video_id" Mode="In" Type="Int32" />
+            <Parameter Name="Name" Mode="In" Type="String" />
+            <Parameter Name="User" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="DeleteImage">
+          <Parameter Name="Image_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="GetImages" ReturnType="Collection(HelpCenter2Model.sp_GetImages_Result)">
+          <Parameter Name="Image_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="NewImage">
+            <Parameter Name="Name" Mode="In" Type="String" />
+            <Parameter Name="User" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="UpdateImage">
+            <Parameter Name="Image_id" Mode="In" Type="Int32" />
+            <Parameter Name="Name" Mode="In" Type="String" />
+            <Parameter Name="User" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="GetModules" ReturnType="Collection(HelpCenter2Model.sp_GetModules_Result)">
+          <Parameter Name="Module_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="GetSections" ReturnType="Collection(HelpCenter2Model.sp_GetSections_Result)">
+            <Parameter Name="Section_id" Mode="In" Type="Int32" />
+            <Parameter Name="Active_only" Mode="In" Type="Boolean" />
+            <Parameter Name="Ordered" Mode="In" Type="Boolean" />
+          </FunctionImport>
+          <FunctionImport Name="NewSection">
+            <Parameter Name="Module_id" Mode="In" Type="Int32" />
+            <Parameter Name="Section" Mode="In" Type="String" />
+            <Parameter Name="User" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="UpdateSection">
+            <Parameter Name="Section_id" Mode="In" Type="Int32" />
+            <Parameter Name="User" Mode="In" Type="Int32" />
+            <Parameter Name="Name" Mode="In" Type="String" />
+            <Parameter Name="Module_id" Mode="In" Type="Int32" />
+            <Parameter Name="Enabled" Mode="In" Type="Boolean" />
+          </FunctionImport>
+          <FunctionImport Name="UpdateSectionOrder" ReturnType="Collection(HelpCenter2Model.sp_UpdateSectionOrder_Result)">
+            <Parameter Name="Section_id" Mode="In" Type="Int32" />
+            <Parameter Name="Module_id" Mode="In" Type="Int32" />
+            <Parameter Name="User" Mode="In" Type="Int32" />
+            <Parameter Name="Old_Order" Mode="In" Type="Int32" />
+            <Parameter Name="New_Order" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="CountSectionsByModule" ReturnType="Collection(HelpCenter2Model.sp_CountSectionsByModule_Result)">
+          <Parameter Name="Module_id" Mode="In" Type="Int32" />
+          </FunctionImport>
+        </EntityContainer>
+        <ComplexType Name="sp_GetVideos_Result">
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="200" />
+          <Property Type="String" Name="User" Nullable="false" MaxLength="50" />
+          <Property Type="DateTime" Name="Created_at" Nullable="false" Precision="16" />
+          <Property Type="Int32" Name="Videos_id" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="sp_GetImages_Result">
+          <Property Type="String" Name="Name" Nullable="false" MaxLength="200" />
+          <Property Type="String" Name="User" Nullable="false" MaxLength="50" />
+          <Property Type="DateTime" Name="Created_at" Nullable="false" Precision="16" />
+          <Property Type="Int32" Name="Images_id" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="sp_GetModules_Result">
+          <Property Type="String" Name="Module" Nullable="false" MaxLength="50" />
+          <Property Type="Int32" Name="Modules_id" Nullable="false" />
+        </ComplexType>
+        <ComplexType Name="sp_GetSections_Result">
+          <Property Type="Int32" Name="Module_id" Nullable="false" />
+          <Property Type="String" Name="Module" Nullable="false" MaxLength="50" />
+          <Property Type="String" Name="Section" Nullable="false" MaxLength="100" />
+          <Property Type="Int32" Name="Order" Nullable="false" />
+          <Property Type="Boolean" Name="Active" Nullable="false" />
+          <Property Type="DateTime" Name="Created_at" Nullable="false" Precision="16" />
+          <Property Type="Int32" Name="Sections_id" Nullable="false" />
+          <Property Type="String" Name="User" Nullable="false" MaxLength="50" />
+        </ComplexType>
+        <ComplexType Name="sp_UpdateSectionOrder_Result">
+        <Property Type="Int32" Name="Section_id" Nullable="true" />
+        </ComplexType>
+        <ComplexType Name="sp_CountSectionsByModule_Result">
+          <Property Type="Int32" Name="Modules_id" Nullable="false" />
+          <Property Type="String" Name="Module" Nullable="false" MaxLength="50" />
+          <Property Type="Int32" Name="Sections" Nullable="true" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="HelpCenter2ModelStoreContainer" CdmEntityContainer="HelpCenter2Entities" >
+          <FunctionImportMapping FunctionImportName="DeleteVideo" FunctionName="HelpCenter2Model.Store.sp_DeleteVideo" />
+          <FunctionImportMapping FunctionImportName="GetVideos" FunctionName="HelpCenter2Model.Store.sp_GetVideos">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="HelpCenter2Model.sp_GetVideos_Result">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="User" ColumnName="User" />
+                <ScalarProperty Name="Created_at" ColumnName="Created_at" />
+                <ScalarProperty Name="Videos_id" ColumnName="Videos_id" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="NewVideo" FunctionName="HelpCenter2Model.Store.sp_NewVideo" />
+          <FunctionImportMapping FunctionImportName="UpdateVideo" FunctionName="HelpCenter2Model.Store.sp_UpdateVideo" />
+          <FunctionImportMapping FunctionImportName="DeleteImage" FunctionName="HelpCenter2Model.Store.sp_DeleteImage" />
+          <FunctionImportMapping FunctionImportName="GetImages" FunctionName="HelpCenter2Model.Store.sp_GetImages" >
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="HelpCenter2Model.sp_GetImages_Result">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="User" ColumnName="User" />
+                <ScalarProperty Name="Created_at" ColumnName="Created_at" />
+                <ScalarProperty Name="Images_id" ColumnName="Images_id" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="NewImage" FunctionName="HelpCenter2Model.Store.sp_NewImage" />
+          <FunctionImportMapping FunctionImportName="UpdateImage" FunctionName="HelpCenter2Model.Store.sp_UpdateImage" />
+          <FunctionImportMapping FunctionImportName="GetModules" FunctionName="HelpCenter2Model.Store.sp_GetModules">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="HelpCenter2Model.sp_GetModules_Result">
+                <ScalarProperty Name="Module" ColumnName="Module" />
+                <ScalarProperty Name="Modules_id" ColumnName="Modules_id" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetSections" FunctionName="HelpCenter2Model.Store.sp_GetSections" >
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="HelpCenter2Model.sp_GetSections_Result">
+                <ScalarProperty Name="Module_id" ColumnName="Module_id" />
+                <ScalarProperty Name="Module" ColumnName="Module" />
+                <ScalarProperty Name="Section" ColumnName="Section" />
+                <ScalarProperty Name="Order" ColumnName="Order" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="Created_at" ColumnName="Created_at" />
+                <ScalarProperty Name="Sections_id" ColumnName="Sections_id" />
+                <ScalarProperty Name="User" ColumnName="User" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="NewSection" FunctionName="HelpCenter2Model.Store.sp_NewSection" />
+          <FunctionImportMapping FunctionImportName="UpdateSection" FunctionName="HelpCenter2Model.Store.sp_UpdateSection" />
+          <FunctionImportMapping FunctionImportName="UpdateSectionOrder" FunctionName="HelpCenter2Model.Store.sp_UpdateSectionOrder" >
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="HelpCenter2Model.sp_UpdateSectionOrder_Result">
+              <ScalarProperty Name="Section_id" ColumnName="Section_id" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="CountSectionsByModule" FunctionName="HelpCenter2Model.Store.sp_CountSectionsByModule">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="HelpCenter2Model.sp_CountSectionsByModule_Result">
+                <ScalarProperty Name="Modules_id" ColumnName="Modules_id" />
+                <ScalarProperty Name="Module" ColumnName="Module" />
+                <ScalarProperty Name="Sections" ColumnName="Sections" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

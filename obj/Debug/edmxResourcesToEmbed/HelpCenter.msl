@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="HelpCenter2ModelStoreContainer" CdmEntityContainer="HelpCenter2Entities">
+    <FunctionImportMapping FunctionImportName="GetVideos" FunctionName="HelpCenter2Model.Store.sp_GetVideos">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HelpCenter2Model.sp_GetVideos_Result">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="User" ColumnName="User" />
+          <ScalarProperty Name="Created_at" ColumnName="Created_at" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_NewVideo" FunctionName="HelpCenter2Model.Store.sp_NewVideo" />
+  </EntityContainerMapping>
+</Mapping>

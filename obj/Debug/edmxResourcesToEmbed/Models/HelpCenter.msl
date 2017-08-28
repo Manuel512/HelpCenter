@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="HelpCenter2ModelStoreContainer" CdmEntityContainer="HelpCenter2Entities">
+    <FunctionImportMapping FunctionImportName="DeleteVideo" FunctionName="HelpCenter2Model.Store.sp_DeleteVideo" />
+    <FunctionImportMapping FunctionImportName="GetVideos" FunctionName="HelpCenter2Model.Store.sp_GetVideos">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HelpCenter2Model.sp_GetVideos_Result">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="User" ColumnName="User" />
+          <ScalarProperty Name="Created_at" ColumnName="Created_at" />
+          <ScalarProperty Name="Videos_id" ColumnName="Videos_id" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="NewVideo" FunctionName="HelpCenter2Model.Store.sp_NewVideo" />
+    <FunctionImportMapping FunctionImportName="UpdateVideo" FunctionName="HelpCenter2Model.Store.sp_UpdateVideo" />
+    <FunctionImportMapping FunctionImportName="DeleteImage" FunctionName="HelpCenter2Model.Store.sp_DeleteImage" />
+    <FunctionImportMapping FunctionImportName="GetImages" FunctionName="HelpCenter2Model.Store.sp_GetImages">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HelpCenter2Model.sp_GetImages_Result">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="User" ColumnName="User" />
+          <ScalarProperty Name="Created_at" ColumnName="Created_at" />
+          <ScalarProperty Name="Images_id" ColumnName="Images_id" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="NewImage" FunctionName="HelpCenter2Model.Store.sp_NewImage" />
+    <FunctionImportMapping FunctionImportName="UpdateImage" FunctionName="HelpCenter2Model.Store.sp_UpdateImage" />
+    <FunctionImportMapping FunctionImportName="GetModules" FunctionName="HelpCenter2Model.Store.sp_GetModules">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HelpCenter2Model.sp_GetModules_Result">
+          <ScalarProperty Name="Module" ColumnName="Module" />
+          <ScalarProperty Name="Modules_id" ColumnName="Modules_id" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetSections" FunctionName="HelpCenter2Model.Store.sp_GetSections">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HelpCenter2Model.sp_GetSections_Result">
+          <ScalarProperty Name="Module_id" ColumnName="Module_id" />
+          <ScalarProperty Name="Module" ColumnName="Module" />
+          <ScalarProperty Name="Section" ColumnName="Section" />
+          <ScalarProperty Name="Order" ColumnName="Order" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="Created_at" ColumnName="Created_at" />
+          <ScalarProperty Name="Sections_id" ColumnName="Sections_id" />
+          <ScalarProperty Name="User" ColumnName="User" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="NewSection" FunctionName="HelpCenter2Model.Store.sp_NewSection" />
+    <FunctionImportMapping FunctionImportName="UpdateSection" FunctionName="HelpCenter2Model.Store.sp_UpdateSection" />
+    <FunctionImportMapping FunctionImportName="UpdateSectionOrder" FunctionName="HelpCenter2Model.Store.sp_UpdateSectionOrder">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HelpCenter2Model.sp_UpdateSectionOrder_Result">
+          <ScalarProperty Name="Section_id" ColumnName="Section_id" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="CountSectionsByModule" FunctionName="HelpCenter2Model.Store.sp_CountSectionsByModule">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="HelpCenter2Model.sp_CountSectionsByModule_Result">
+          <ScalarProperty Name="Modules_id" ColumnName="Modules_id" />
+          <ScalarProperty Name="Module" ColumnName="Module" />
+          <ScalarProperty Name="Sections" ColumnName="Sections" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+  </EntityContainerMapping>
+</Mapping>
