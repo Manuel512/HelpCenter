@@ -1,0 +1,35 @@
+﻿body {
+    margin-top:80px;
+}
+
+#Menu {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding: 20px;
+}
+
+#Menu .panel-group {
+    padding: 15px;
+    border: 1px solid #abd7f7;
+    border-radius: 5px;
+}
+
+#Menu .glyphicon { 
+    margin-right:10px; 
+}
+
+#Menu .panel-body { 
+    padding:0px; 
+}
+
+#Menu .panel-body table tr td { 
+    padding-left: 15px;
+}
+
+#Menu .panel-body .table {
+    margin-bottom: 0px;
+}
+
+#Menu a {
+    text-decoration: none;
+}
